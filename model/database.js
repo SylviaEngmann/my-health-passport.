@@ -1,5 +1,7 @@
 require("dotenv").config();
 const mysql = require("mysql");
+const fs = require("fs");
+
 
 const DB_HOST = process.env.DB_HOST;
 const DB_USER = process.env.DB_USER;
@@ -10,7 +12,7 @@ const con = mysql.createConnection({
   host: DB_HOST || "127.0.0.1",
   user: DB_USER || "root",
   password: DB_PASS,
-  database: DB_NAME || "facebook",
+  database: DB_NAME || "health_pass",
   multipleStatements: true
 });
 
@@ -18,11 +20,10 @@ con.connect(function(err) {
   if (err) throw err;
   console.log("Connected!");
 
-  let sql =
-    "DROP TABLE if exists students; CREATE TABLE students(id INT NOT NULL AUTO_INCREMENT, firstname VARCHAR(40) not null, lastname VARCHAR(40) not null, PRIMARY KEY (id));";
+  let sql = fs.readFileSync(__dirname+"/db.sql").toString();
   con.query(sql, function(err, result) {
     if (err) throw err;
-    console.log("Table creation `students` was successful!");
+    console.log("Tables creation was successful!");
 
     console.log("Closing...");
   });
