@@ -1,0 +1,78 @@
+
+.background {
+    width: 400px;
+    height: 450px;
+}
+
+.backgroundII {
+    width: 350px;
+    height: 300px;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+}
+
+.formDiv {
+    width: 500px;
+    height: 600px;
+    padding: 56px 50px 176px 72px;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+    background-color: #ffffff;
+    position: fixed;
+    top: 7rem;
+    left: 30rem;
+}
+
+h2 {
+    color: #d9326c;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 35px;
+    font-weight: 600;
+}
+
+.signIn {
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 20px;
+    margin-top: 2rem;
+}
+
+.my-1 {
+    text-align: center;
+}
+
+input {
+    height: 2.5rem;
+    width: 80%; 
+    margin: 0.5rem 0 0.5rem;
+    border: none;
+    border-radius: 65px;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+}
+
+.btn-div {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.sub {
+    width: 50%; 
+    height: 2rem;
+    border: none;
+    border-radius: 49px;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+    background-color: #d9326c;
+    text-align: center;
+
+}
+
+.btn {
+    color: #ffffff;
+    font-family: Montserrat;
+    font-size: 25px;
+    font-weight: 500;
+    text-align: center;
+    position: relative;
+    padding: 0.1rem;
+}

@@ -11,6 +11,24 @@ router.get("/", (req, res) => {
     res.send({ message: 'Welcome to My Health App API Server. Try /visits' });
 });
 
+//Login
+router.post("/login", async (req, res) => {
+    let {username, password} = req.body;
+
+    try {
+        let result = await db(`SELECT * FROM users where username = ${username} and password = ${password}`);
+        let user = result.data;
+        if (user.length === 0) {
+            res.status(404).send({ error: 'User not found' });
+        }
+        else {
+            res.send(user[0]);
+        }
+    }catch (err) {
+        res.status(500).send({error: err.message});
+    }
+})
+
 //GET all visits
 router.get("/visits", async (req, res) => {
     try {
