@@ -17,7 +17,6 @@ router.post("/login", async (req, res) => {
 
     try {
         let result = await db(`SELECT * FROM users where username = '${username}' and password = '${password}'`);
-        //let result = await db('SELECT * FROM users WHERE username = ? AND password = ?', [username, password]);
         let user = result.data;
         if (user.length === 0) {
             res.status(404).send({ error: 'User not found' });
@@ -33,7 +32,7 @@ router.post("/login", async (req, res) => {
 //GET all visits
 router.get("/visits", async (req, res) => {
     try {
-        let result = await db('SELECT hv.visit_date, hv.reason, hv.visit_notes, u.username, h.hospital_name, h.doctor_name FROM users AS u INNER JOIN hospitalVisit as hv ON hv.userID = u.id INNER JOIN hospital as h ON hv.hospitalID = h.hid');
+        let result = await db('SELECT hv.visit_id, hv.visit_date, hv.reason, hv.visit_notes, u.username, h.hospital_name, h.doctor_name FROM users AS u INNER JOIN hospitalVisit as hv ON hv.userID = u.id INNER JOIN hospital as h ON hv.hospitalID = h.hid');
         let visits = result.data;
         res.send(visits);
     } catch (err) {
@@ -46,7 +45,7 @@ router.get("/visits/:id", async (req, res) => {
     let userId = req.params.id;
 
     try {
-        let result = await db(`SELECT hv.visit_date, hv.reason, hv.visit_notes, u.username, h.hospital_name, h.doctor_name FROM users AS u INNER JOIN hospitalVisit as hv ON hv.userID = u.id INNER JOIN hospital as h ON hv.hospitalID = h.hid WHERE hv.userID = ${userId}`);
+        let result = await db(`SELECT hv.visit_id, hv.visit_date, hv.reason, hv.visit_notes, u.username, h.hospital_name, h.doctor_name FROM users AS u INNER JOIN hospitalVisit as hv ON hv.userID = u.id INNER JOIN hospital as h ON hv.hospitalID = h.hid WHERE hv.userID = ${userId}`);
         let userVisits = result.data;
         if (userVisits.length === 0) {
             res.status(404).send({ error: 'User Visits not found' });
