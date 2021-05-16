@@ -16,7 +16,8 @@ router.post("/login", async (req, res) => {
     let {username, password} = req.body;
 
     try {
-        let result = await db(`SELECT * FROM users where username = ${username} and password = ${password}`);
+        let result = await db(`SELECT * FROM users where username = '${username}' and password = '${password}'`);
+        //let result = await db('SELECT * FROM users WHERE username = ? AND password = ?', [username, password]);
         let user = result.data;
         if (user.length === 0) {
             res.status(404).send({ error: 'User not found' });
@@ -61,7 +62,7 @@ router.get("/visits/:id", async (req, res) => {
 //GET all hospitals
 router.get("/hospitals", async (req, res) => {
     try {
-        let result = await db('SELECT * FROM hospitals');
+        let result = await db('SELECT * FROM hospital');
         let hospitals = result.data;
         res.send(hospitals);
     } catch (err) {
@@ -82,7 +83,7 @@ router.post("/visit", async (req, res) => {
         await db(sql);
 
         // return all visits
-        let result = await db('SELECT * FROM hospitalVisits');
+        let result = await db('SELECT * FROM hospitalVisit');
         let visits = result.data;
         res.status(201).send(visits);
     } catch (err) {

@@ -1,16 +1,8 @@
 import React from 'react';
 
-function UserVisitsList(props) {
+function UserVisitsDetailView(props) {
     return (
-        <table className="">
-            <thead>
-                <tr>
-                    <th>DATE</th>
-                    <th>HOSPITAL</th>
-                    <th>REASON</th>
-                </tr>
-            </thead>
-            <tbody>
+        <div className="">
             {
                 props.visits.map(v => (
                     <tr key={v.visit_id}>
@@ -30,9 +22,8 @@ function UserVisitsList(props) {
                 ))
 
                 }
-            </tbody>
-        </table>
+        </div>
     );
 }
 
-export default UserVisitsList;
+export default UserVisitsDetailView;

@@ -1,34 +1,50 @@
-import React from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import React, { useEffect, useState }  from 'react';
+import { Switch, Route, Router } from 'react-router-dom';
+import { useHistory } from "react-router-dom";
 import Dashboard from './components/Dashboard';
 import Login from './components/Login';
 import './App.css';
+import createHistory from 'history/createBrowserHistory';
 
-const server = "localhost:5000";
+const history = createHistory({forceRefresh:true});   
 
 function App() {
 
-  const login = () => {
-    console.log("button clicked");
-    // fetch(`${server}/login`, {
-    //     method: "POST",
-    //     headers: {
-    //       "Content-Type": "application/json"
-    //     },
-    //     // body: JSON.stringify({ input: input }) 
-    // })
-}
+  let [loggedIn, setUser] = useState();
+  //const history = useHistory();
+
+  async function login(input) {
+    let options = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(input)
+    };
+
+    try {
+      let response = await fetch('http://localhost:5000/login', options);
+      if (response.ok) {
+        let user = await response.json();
+        setUser(user);
+        localStorage.setItem('user', JSON.stringify(user));
+        history.push('/dashboard');
+      } else {
+        console.log(`Server error: ${response.status} ${response.statusText}`);
+      }
+    } catch (err) {
+      console.log(`Network error: ${err.message}`);
+    }
+  }
 
   return (
     <div className="App">
-      <Router>
+      <Router history={history}>
         <Switch>
           <Route path="/login">
-            < Login submitCb={login}/>
-          </Route>
-          <Route path="/dashboard">
-            < Dashboard />
-          </Route>
+              < Login submitCb={login}/>
+            </Route>
+            <Route path="/dashboard">
+              < Dashboard />
+            </Route>
         </Switch>
       </Router>
     </div>

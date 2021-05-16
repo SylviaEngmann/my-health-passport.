@@ -1,5 +1,4 @@
-import React, { useEffect, useState }  from 'react';
-import { useHistory } from "react-router-dom";
+import React, { useState }  from 'react';
 import BackgroundImg1 from '../images/undraw_doctors_hwty.svg';
 import BackgroundImg2 from '../images/undraw_medical_care_movn.svg';
 import { PersonFill, LockFill } from 'react-bootstrap-icons';
@@ -27,7 +26,7 @@ function Login(props) {
         props.submitCb(formData);
         setFormData(EmptyFormData);
 
-        console.log(formData);
+        //console.log(formData);
 
       }
 
@@ -50,7 +49,7 @@ function Login(props) {
                   <div className="my-1">
                       <LockFill/>
                         <input 
-                            type="text"
+                            type="password"
                             name="password"
                             value={formData.password}
                             onChange={handleChange} 
