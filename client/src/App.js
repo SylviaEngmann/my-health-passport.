@@ -1,4 +1,4 @@
-import React, {  useState }  from 'react';
+import React from 'react';
 import { Switch, Route, Router } from 'react-router-dom';
 import Dashboard from './components/Dashboard';
 import Login from './components/Login';
@@ -8,8 +8,6 @@ import createHistory from 'history/createBrowserHistory';
 const history = createHistory({forceRefresh:true});   
 
 function App() {
-
-  let [loggedIn, setUser] = useState();
 
   async function login(input) {
     let options = {
@@ -22,7 +20,6 @@ function App() {
       let response = await fetch('http://localhost:5000/login', options);
       if (response.ok) {
         let user = await response.json();
-        setUser(user);
         localStorage.setItem('user', JSON.stringify(user));
         history.push('/dashboard');
       } else {

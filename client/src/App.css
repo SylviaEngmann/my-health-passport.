@@ -1,4 +1,4 @@
-.body {
+body {
     font-family: Montserrat;
 }
 .background {
@@ -110,17 +110,16 @@ input {
 }
 
 .viewVisitDetails{
-    position: relative;
+    position: fixed;
+    width: 350px;
     right: 0;
     top: 8rem;
+    border-radius: 20px;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
 
 }
-
-.viewVisitDetails.h2 {
+.viewVisitDetails h2 {
     color: black;
-    text-align: center;
-    font-size: 35px;
-    font-weight: 600;
 }
 
 .welcome {

@@ -1,7 +1,6 @@
 import React , { useEffect, useState }from 'react';
 import  '../App.css';
 import UserVisitsList from './UserVisitsList';
-import UserVisitsDetailView from './UserVisitsDetailView';
 import Nav from './Nav';
 import { PersonFill } from 'react-bootstrap-icons';
 import createHistory from 'history/createBrowserHistory';
@@ -11,6 +10,7 @@ const history = createHistory({forceRefresh:true});
 function Dashboard() {
 
   let [visits, setVisits] = useState([]);
+  let [visitDetail, setVisitDetail] = useState({});
   let [user, setUser] = useState({});
   
   useEffect(() => {
@@ -20,11 +20,8 @@ function Dashboard() {
 
   function welcome(){
     const loggedInUser = localStorage.getItem('user');
-    // const firstName = JSON.parse(user).firstname;
-    // console.log(firstName);
     const activeUser = JSON.parse(loggedInUser);
     setUser(activeUser);
-    //console.log(activeUser.firstname);
   }
 
   function logout(){
@@ -56,13 +53,12 @@ function Dashboard() {
     console.log("View Details");
     userVisit = visits.find(v => v.visit_id === visit_id);
     console.log(userVisit);
+    setVisitDetail(userVisit);
   }
   
     return (
       <div>
-   
-          <p>Welcome,{user.firstname} </p>
-          <p className="welcome">Welcome,</p>
+             <p className="welcome">Welcome,{' '}{user.firstname}</p>
           <PersonFill className="logoutButton" onClick={logout}/>
 
         <Nav />
@@ -70,7 +66,15 @@ function Dashboard() {
           visits={visits}
           visitDetailsCb={(visit_id) => visitDetails(visit_id)}
           />
-          <UserVisitsDetailView userVisit={userVisit}/>
+
+          <div className="viewVisitDetails">
+            <p>{visitDetail.visit_date}</p>
+            <h2>{visitDetail.reason}</h2>
+            <p>{visitDetail.doctor_name}</p>
+            <p>{visitDetail.visit_notes}</p>
+          </div>
+          {/* <UserVisitsDetailView/>
+          <UserVisitsDetailView userVisit={userVisit}/> */}
       </div>
     );
   }
