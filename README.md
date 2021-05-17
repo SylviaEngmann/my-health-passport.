@@ -18,4 +18,4 @@ To start the User interface, navigate into the client directory and run:
 
 
 
-_This is a student project that was created at [CodeOp](http://codeop.tech), a full stack development bootcamp in Barcelona.
+_This is a student project that was created at [CodeOp](http://codeop.tech), a full stack development bootcamp in Barcelona._
