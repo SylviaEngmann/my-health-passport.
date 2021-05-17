@@ -89,7 +89,7 @@ input {
 .visitsTable {
     position: relative;
     width: 600px;
-    height: 400px;
+    height: 250px;
     top: 8rem;
     left: 15rem;
     border-radius: 20px;
@@ -99,8 +99,6 @@ input {
 }
 
 .viewButton {
-    /* width: 50%; 
-    height: 2rem; */
     border: none;
     border-radius: 49px;
     box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
@@ -116,15 +114,17 @@ input {
     top: 8rem;
     border-radius: 20px;
     box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+    text-align: center;
 
 }
 .viewVisitDetails h2 {
     color: black;
+    /* text-align: left; */
 }
 
 .welcome {
     position: fixed;
-    left: 20rem;
+    left: 15rem;
     top: 20px;
     font-size: 25px;
 

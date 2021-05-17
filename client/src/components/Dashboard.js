@@ -58,7 +58,7 @@ function Dashboard() {
   
     return (
       <div>
-             <p className="welcome">Welcome,{' '}{user.firstname}</p>
+             <p className="welcome">Welcome,{' '}<strong>{user.firstname}</strong></p>
           <PersonFill className="logoutButton" onClick={logout}/>
 
         <Nav />
@@ -73,8 +73,6 @@ function Dashboard() {
             <p>{visitDetail.doctor_name}</p>
             <p>{visitDetail.visit_notes}</p>
           </div>
-          {/* <UserVisitsDetailView/>
-          <UserVisitsDetailView userVisit={userVisit}/> */}
       </div>
     );
   }
