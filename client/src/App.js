@@ -1,6 +1,5 @@
-import React, { useEffect, useState }  from 'react';
+import React, {  useState }  from 'react';
 import { Switch, Route, Router } from 'react-router-dom';
-import { useHistory } from "react-router-dom";
 import Dashboard from './components/Dashboard';
 import Login from './components/Login';
 import './App.css';
@@ -11,7 +10,6 @@ const history = createHistory({forceRefresh:true});
 function App() {
 
   let [loggedIn, setUser] = useState();
-  //const history = useHistory();
 
   async function login(input) {
     let options = {

@@ -25,9 +25,6 @@ function Login(props) {
         event.preventDefault();
         props.submitCb(formData);
         setFormData(EmptyFormData);
-
-        //console.log(formData);
-
       }
 
     return (

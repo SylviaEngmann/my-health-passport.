@@ -24,7 +24,9 @@ function UserVisitsList(props) {
                         </td>
                         <td>
                             {v.reason} {' '}
-                            <button className="viewButton" onClick={(e) => props.visitDetails(v.visit_id)} type="button">View</button>
+                        </td>
+                        <td>
+                        <button className="viewButton" onClick={(e) => props.visitDetailsCb(v.visit_id)} type="button">View</button>
                         </td>
                     </tr>
                 ))
