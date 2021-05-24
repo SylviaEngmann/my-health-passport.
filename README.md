@@ -11,6 +11,8 @@ To start the User interface, navigate into the client directory and run:
 - `yarn install`
 - `yarn start`
 
+![](healthpassport.gif)
+
 ## DOCUMENTATION
 - [Flow Diagram](https://drive.google.com/file/d/1vxE3Ix51_bbo4uyxbAhnPRLrUW3QqObU/view?usp=sharing)
 - [Database Schema](https://drive.google.com/file/d/1iIEjmYoraTFh7noHwjWdVVqihlVDnAF5/view?usp=sharing)
