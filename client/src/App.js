@@ -1,7 +1,10 @@
 import React from 'react';
-import { Switch, Route, Router } from 'react-router-dom';
+import {Container} from 'react-bootstrap';
+import { Switch, Route } from 'react-router-dom';
 import Dashboard from './components/Dashboard';
 import Login from './components/Login';
+import Register from './components/Register';
+import Home from './components/Home';
 import './App.css';
 import createHistory from 'history/createBrowserHistory';
 
@@ -30,19 +33,25 @@ function App() {
     }
   }
 
+
+
   return (
-    <div className="App">
-      <Router history={history}>
+    <Container fluid>
         <Switch>
+          <Route path="/" exact>
+              <Home />
+          </Route>
           <Route path="/login">
               < Login submitCb={login}/>
-            </Route>
+          </Route>
+          <Route path="/signup">
+              < Register/>
+          </Route>
             <Route path="/dashboard">
               < Dashboard />
             </Route>
         </Switch>
-      </Router>
-    </div>
+    </Container>
   );
 }
 

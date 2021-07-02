@@ -1,6 +1,37 @@
 body {
-    font-family: Montserrat;
+    font-family: Arvo;
 }
+
+.homeImage {
+    width: 500px;
+    height: 400px;
+}
+
+button {
+    width: 130px;
+    height: 50px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+}
+
+.buttons-div {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0.5rem;
+}
+
+ul {
+    list-style: none;
+    padding-left: 10rem;
+}
+
+ul li {
+    display: inline;
+    padding: 0.5rem
+}
+
+
 .background {
     width: 400px;
     height: 450px;
@@ -136,4 +167,16 @@ input {
     position: fixed;
     right: 20px;
     top: 20px;
+}
+
+@media screen and (max-width: 600px) {
+    .homeImage {
+        width: 350px;
+        height: 300px;
+    }
+
+    ul {
+        padding-left: 2rem;
+    }
+    
 }
