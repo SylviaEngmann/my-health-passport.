@@ -1,5 +1,5 @@
 import React from 'react';
-import HomeImgae from '../images/undraw_workout_gcgu.svg';
+import HomeImage from '../images/workout.svg';
 import {Row, Col} from 'react-bootstrap';
 import  '../App.css';
 import createHistory from 'history/createBrowserHistory';
@@ -45,7 +45,7 @@ function Home() {
                             
                 </Col>
                 <Col>
-                    <img src={HomeImgae} alt="HomeImage" className="homeImage"/>
+                    <img src={HomeImage} alt="HomeImage" className="homeImage"/>
                 </Col>
             </Row>
         </div>

@@ -7,6 +7,16 @@ body {
     height: 400px;
 }
 
+.loginImage {
+    width: 300px;
+    height: 250px;
+    float: right;
+}
+
+.loginPage {
+    margin-top: 10rem;
+}
+
 button {
     width: 130px;
     height: 50px;
@@ -29,20 +39,6 @@ ul {
 ul li {
     display: inline;
     padding: 0.5rem
-}
-
-
-.background {
-    width: 400px;
-    height: 450px;
-}
-
-.backgroundII {
-    width: 350px;
-    height: 300px;
-    position: fixed;
-    right: 0;
-    bottom: 0;
 }
 
 .formDiv {
@@ -69,16 +65,16 @@ h2 {
     margin-top: 2rem;
 }
 
-.my-1 {
-    text-align: center;
-}
-
-input {
-    height: 2.5rem;
-    width: 80%; 
-    margin: 0.5rem 0 0.5rem;
+div form input {
+    height: 3rem;
+    width: 15rem;
+    display: block; 
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
     border: none;
-    border-radius: 65px;
+    border-radius: 10px;
     box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
 }
 
@@ -87,24 +83,13 @@ input {
     margin-top: 2rem;
 }
 
-.sub {
-    width: 50%; 
-    height: 2rem;
-    border: none;
-    border-radius: 49px;
-    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
-    background-color: #d9326c;
-    text-align: center;
+.btn-div p {
+    margin-top: 0.5rem;
 }
 
-.btn {
-    color: #ffffff;
-    font-family: Montserrat;
-    font-size: 25px;
-    font-weight: 500;
-    text-align: center;
-    position: relative;
-    padding: 0.1rem;
+.btn-div p a {
+    text-decoration: none;
+    color: #117baa;
 }
 
 .nav{
@@ -177,6 +162,10 @@ input {
 
     ul {
         padding-left: 2rem;
+    }
+
+    .loginPage {
+        margin-top: 5rem;
     }
     
 }
