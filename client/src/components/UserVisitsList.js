@@ -1,7 +1,6 @@
 import React from 'react';
 import  '../App.css';
 
-
 function UserVisitsList(props) {
     return (
         <table className="visitsTable">
@@ -17,7 +16,7 @@ function UserVisitsList(props) {
                 props.visits.map(v => (
                     <tr key={v.visit_id}>
                         <td>
-                            {v.visit_date} {' '}
+                            {v.visit_date} {' '} 
                         </td>
                         <td>
                             {v.hospital_name} {' '}

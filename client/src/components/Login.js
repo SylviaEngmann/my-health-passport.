@@ -1,5 +1,6 @@
 import React, { useState }  from 'react';
 import LoginImage from '../images/meds.svg';
+import Logo from "../components/Logo";
 import {Row, Col} from 'react-bootstrap';
 
 import  '../App.css';
@@ -33,7 +34,11 @@ function Login(props) {
       }
 
     return (
+      <div>
+        <Logo/>
+
         <div className="loginPage">
+
             <Row>
               <Col>
                 <img src={LoginImage} alt="LoginImage" className="loginImage"/>
@@ -64,6 +69,8 @@ function Login(props) {
               </Col>
           </Row>
         </div>
+      </div>
+        
           
     );
   }

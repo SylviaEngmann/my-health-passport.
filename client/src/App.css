@@ -2,6 +2,11 @@ body {
     font-family: Arvo;
 }
 
+.logoImage {
+    width: 100px;
+    height: 100px;
+}
+
 .homeImage {
     width: 500px;
     height: 400px;
@@ -10,7 +15,8 @@ body {
 .loginImage {
     width: 300px;
     height: 250px;
-    float: right;
+    position: relative;
+    left: 6rem;
 }
 
 .loginPage {
@@ -92,72 +98,96 @@ div form input {
     color: #117baa;
 }
 
-.nav{
-    background-color: #d9326c;
-    width: 200px;
+nav {
+    background-color: #117BAA;
+    width: 220px;
     height: 100%;
     position: fixed;
     float: left;
-    top: 0;
+    top: 0rem;
 
+} 
+
+nav ul {
+    padding-left: 2rem;
+    margin-top: 5rem;
 }
+
+nav ul li {
+    display: block;    
+  }
+
+  nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+  }
+
+
 
 .visitsTable {
     position: relative;
-    width: 600px;
-    height: 250px;
+    /* width: 600px; */
+    /* height: 250px; */
     top: 8rem;
     left: 15rem;
-    border-radius: 20px;
-    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
     background-color: #ffffff;
 
 }
 
 .viewButton {
     border: none;
-    border-radius: 49px;
+    border-radius: 30px;
+    height: 2rem;
+    width: 5rem;
     box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
-    background-color: #d9326c;
+    background-color: #117BAA;
     color: #ffffff;
     text-align: center;
 }
 
-.viewVisitDetails{
-    position: fixed;
-    width: 350px;
-    right: 0;
-    top: 8rem;
-    border-radius: 20px;
-    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
-    text-align: center;
+.visitHeadings{
+    display: flex;
+    justify-content: space-between;
 
 }
 .viewVisitDetails h2 {
     color: black;
-    /* text-align: left; */
+}
+
+.userActions {
+    height: 3rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-left : 2rem;
+    padding-right : 2rem;
 }
 
 .welcome {
-    position: fixed;
-    left: 15rem;
-    top: 20px;
-    font-size: 25px;
+    font-size: 20px;
+    margin-top: 1rem;
+    padding-right: 0.8rem;
 
 }
 
 .logoutButton {
     width: 2rem;
     height:2rem;
-    position: fixed;
-    right: 20px;
-    top: 20px;
 }
+
 
 @media screen and (max-width: 600px) {
     .homeImage {
         width: 350px;
         height: 300px;
+    }
+
+    .loginImage {
+        width: 300px;
+        height: 250px;
+        position: relative;
+        left: 2rem;
     }
 
     ul {

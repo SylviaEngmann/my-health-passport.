@@ -7,6 +7,9 @@ import Register from './components/Register';
 import Home from './components/Home';
 import './App.css';
 import createHistory from 'history/createBrowserHistory';
+import Appointments from './components/Appointments';
+import Profile from './components/Profile';
+import Settings from './components/Settings';
 
 const history = createHistory({forceRefresh:true});   
 
@@ -47,9 +50,19 @@ function App() {
           <Route path="/signup">
               < Register/>
           </Route>
-            <Route path="/dashboard">
+          <Route path="/dashboard">
               < Dashboard />
-            </Route>
+          </Route>
+          <Route path="/appointments">
+              < Appointments />
+          </Route>
+          <Route path="/profile">
+              < Profile />
+          </Route>
+          <Route path="/settings">
+              < Settings />
+          </Route>
+
         </Switch>
     </Container>
   );

@@ -1,9 +1,11 @@
 import React , { useEffect, useState }from 'react';
 import  '../App.css';
+import {Row, Col, Modal} from 'react-bootstrap';
 import UserVisitsList from './UserVisitsList';
-import Nav from './Nav';
-import { PersonFill } from 'react-bootstrap-icons';
+
+import SideNav from './SideNav';
 import createHistory from 'history/createBrowserHistory';
+import TopNav from './TopNav';
 
 const history = createHistory({forceRefresh:true});
 
@@ -11,24 +13,15 @@ function Dashboard() {
 
   let [visits, setVisits] = useState([]);
   let [visitDetail, setVisitDetail] = useState({});
-  let [user, setUser] = useState({});
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
   
   useEffect(() => {
     getUserVisits();
-    welcome();
   }, []);
 
-  function welcome(){
-    const loggedInUser = localStorage.getItem('user');
-    const activeUser = JSON.parse(loggedInUser);
-    setUser(activeUser);
-  }
-
-  function logout(){
-    console.log("Logged out");
-    localStorage.clear();
-    history.push('/login');
-  }
 
   async function getUserVisits() {
     const loggedInUser = localStorage.getItem('user');
@@ -54,25 +47,40 @@ function Dashboard() {
     userVisit = visits.find(v => v.visit_id === visit_id);
     console.log(userVisit);
     setVisitDetail(userVisit);
+    handleShow();
   }
   
     return (
       <div>
-             <p className="welcome">Welcome,{' '}<strong>{user.firstname}</strong></p>
-          <PersonFill className="logoutButton" onClick={logout}/>
+        <TopNav />
+        <Row>
+          <Col>
+            <SideNav />
+          </Col>
 
-        <Nav />
+          <Col>
+          
+          </Col>
+
+          <Col>
+          
+          </Col>
+
+        </Row>
+        
           <UserVisitsList
           visits={visits}
           visitDetailsCb={(visit_id) => visitDetails(visit_id)}
           />
 
-          <div className="viewVisitDetails">
-            <p>{visitDetail.visit_date}</p>
-            <h2>{visitDetail.reason}</h2>
-            <p>{visitDetail.doctor_name}</p>
-            <p>{visitDetail.visit_notes}</p>
-          </div>
+          <Modal show={show} onHide={handleClose} className="viewVisitDetails">
+            <Modal.Body>
+              <p>{visitDetail.visit_date}</p>
+              <h2>{visitDetail.reason}</h2>
+              <p>{visitDetail.doctor_name}</p>
+              <p>{visitDetail.visit_notes}</p>
+            </Modal.Body>
+          </Modal>
       </div>
     );
   }

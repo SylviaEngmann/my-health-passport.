@@ -1,13 +1,14 @@
 import React, { useState }  from 'react';
 import LoginImage from '../images/meds.svg';
 import {Row, Col} from 'react-bootstrap';
+import Logo from '../components/Logo';
 
 import  '../App.css';
 
 const EmptyFormData = {
     firstname: '',
     lastname: '',
-    dob: "01/01/2021",
+    dob: '',
     username: '',
     password: ''
 };
@@ -31,12 +32,15 @@ function Register(props) {
     
       const handleSubmit = (event) => {
         event.preventDefault();
-        props.submitCb(formData);
+        //props.submitCb(formData);
+        console.log(formData)
         setFormData(EmptyFormData);
       }
 
     return (
-        <div className="loginPage">
+        <div>
+            <Logo />
+            <div className="loginPage">
             <Row>
               <Col>
                 <img src={LoginImage} alt="LoginImage" className="loginImage"/>
@@ -88,6 +92,8 @@ function Register(props) {
               </Col>
           </Row>
         </div>
+        </div>
+    
           
     );
   }

@@ -3,6 +3,7 @@ import HomeImage from '../images/workout.svg';
 import {Row, Col} from 'react-bootstrap';
 import  '../App.css';
 import createHistory from 'history/createBrowserHistory';
+import Logo from './Logo';
 
 const history = createHistory({forceRefresh:true}); 
 
@@ -27,7 +28,9 @@ function Home() {
         history.push('/signup');
     }
     return (
-        <div style={{marginTop: "5rem"}}>
+        <div>
+            <Logo/>
+            <div style={{marginTop: "3rem"}}>
             <Row>
                 <Col style={{marginTop: "5rem"}}>
                     <h1 style={{textAlign: "center"}}>my health passport.</h1>
@@ -50,6 +53,8 @@ function Home() {
             </Row>
         </div>
       
+        </div>
+        
     );
   }
   
