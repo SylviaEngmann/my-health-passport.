@@ -23,7 +23,7 @@ function App() {
     };
 
     try {
-      let response = await fetch('http://localhost:5000/login', options);
+      let response = await fetch('/login', options);
       if (response.ok) {
         let user = await response.json();
         localStorage.setItem('user', JSON.stringify(user));
@@ -35,8 +35,6 @@ function App() {
       console.log(`Network error: ${err.message}`);
     }
   }
-
-
 
   return (
     <Container fluid>

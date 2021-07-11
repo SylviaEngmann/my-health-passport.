@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import {Row, Col} from 'react-bootstrap';
 import { PersonFill } from 'react-bootstrap-icons';
 import createHistory from 'history/createBrowserHistory';
 

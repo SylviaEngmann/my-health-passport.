@@ -28,7 +28,7 @@ function Dashboard() {
     const userId = JSON.parse(loggedInUser).id;
 
     try {
-      let response = await fetch(`http://localhost:5000/visits/${userId}`);
+      let response = await fetch(`/visits/${userId}`);
       if (response.ok) {
         let visits = await response.json();
         setVisits(visits);
