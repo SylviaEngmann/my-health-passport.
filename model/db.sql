@@ -1,4 +1,4 @@
---CREATE DATABSE health_pass;
+-- CREATE DATABSE health_pass;
 
 DROP TABLE IF EXISTS hospitalVisit;
 DROP TABLE IF EXISTS users;
