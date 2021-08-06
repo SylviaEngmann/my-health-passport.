@@ -2,13 +2,12 @@ import React, { useState }  from 'react';
 import LoginImage from '../images/meds.svg';
 import {Row, Col} from 'react-bootstrap';
 import Logo from '../components/Logo';
-
 import  '../App.css';
 
 const EmptyFormData = {
     firstname: '',
     lastname: '',
-    dob: '',
+    dob: '01-01-2000',
     username: '',
     password: ''
 };
@@ -32,7 +31,7 @@ function Register(props) {
     
       const handleSubmit = (event) => {
         event.preventDefault();
-        //props.submitCb(formData);
+        props.submitCb(formData);
         console.log(formData)
         setFormData(EmptyFormData);
       }
@@ -62,14 +61,12 @@ function Register(props) {
                                 placeholder="Last Name"
                                 value={formData.lastname}
                                 onChange={handleChange} 
-                            />   
+                            />
                             <input 
                                 type="date"
-                                name="dateofbirth"
-                                placeholder="Date of Birth"
                                 value={formData.dob}
-                                onChange={handleChange} 
-                            />           
+                                onChange={(event) => setFormData({dob: event.target.value})}
+                            />
                             <input 
                                 type="text"
                                 name="username"

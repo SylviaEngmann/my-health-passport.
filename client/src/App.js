@@ -36,6 +36,27 @@ function App() {
     }
   }
 
+  async function register(input) {
+    let options = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(input)
+    };
+
+    try {
+      let response = await fetch('/register', options);
+      if (response.ok) {
+        //let user = await response.json();
+        //localStorage.setItem('user', JSON.stringify(user));
+        history.push('/login');
+      } else {
+        console.log(`Server error: ${response.status} ${response.statusText}`);
+      }
+    } catch (err) {
+      console.log(`Network error: ${err.message}`);
+    }
+  }
+
   return (
     <Container fluid>
         <Switch>
@@ -46,7 +67,7 @@ function App() {
               < Login submitCb={login}/>
           </Route>
           <Route path="/signup">
-              < Register/>
+              < Register submitCb={register}/>
           </Route>
           <Route path="/dashboard">
               < Dashboard />

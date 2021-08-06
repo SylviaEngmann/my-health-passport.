@@ -84,6 +84,20 @@ div form input {
     box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
 }
 
+.date-selector {
+    height: 3rem;
+    width: 15rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+}
+
+
 .btn-div {
     text-align: center;
     margin-top: 2rem;
@@ -126,11 +140,9 @@ nav ul li {
 
 
 .visitsTable {
-    position: relative;
-    /* width: 600px; */
-    /* height: 250px; */
-    top: 8rem;
-    left: 15rem;
+    position: fixed;
+    top: 30rem;
+    left: 18rem;
     background-color: #ffffff;
 
 }
@@ -174,6 +186,20 @@ nav ul li {
 .logoutButton {
     width: 2rem;
     height:2rem;
+}
+
+.vitalsDiv {
+    position: fixed;
+    left: 15rem;
+    display: flex;
+    flex-direction: row;
+    margin-top: 0.5rem;
+    margin-bottom: 20rem;
+}
+
+.vitalsDiv .card {
+    margin-left: 2.5rem;
+    margin-right: 1.5rem;
 }
 
 

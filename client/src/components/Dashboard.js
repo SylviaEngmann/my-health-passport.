@@ -6,6 +6,7 @@ import UserVisitsList from './UserVisitsList';
 import SideNav from './SideNav';
 import createHistory from 'history/createBrowserHistory';
 import TopNav from './TopNav';
+import Vitals from './Vitals';
 
 const history = createHistory({forceRefresh:true});
 
@@ -53,20 +54,9 @@ function Dashboard() {
     return (
       <div>
         <TopNav />
-        <Row>
-          <Col>
             <SideNav />
-          </Col>
-
-          <Col>
+            <Vitals />
           
-          </Col>
-
-          <Col>
-          
-          </Col>
-
-        </Row>
         
           <UserVisitsList
           visits={visits}
