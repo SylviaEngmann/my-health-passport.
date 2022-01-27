@@ -7,7 +7,7 @@ import  '../App.css';
 const EmptyFormData = {
     firstname: '',
     lastname: '',
-    dob: '01-01-2000',
+    dateofbirth: '01-01-2000',
     username: '',
     password: ''
 };
@@ -64,8 +64,9 @@ function Register(props) {
                             />
                             <input 
                                 type="date"
-                                value={formData.dob}
-                                onChange={(event) => setFormData({dob: event.target.value})}
+                                value={formData.dateofbirth}
+                                onChange={handleChange}
+                                //onChange={(event) => setFormData({dob: event.target.value})}
                             />
                             <input 
                                 type="text"
